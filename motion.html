@@ -1,0 +1,55 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .motion{
+        background: #000;
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .circle{
+        width: 100px;
+        height: 100px;
+        border: 1px solid #fff;
+        position: absolute;
+        border-radius: 50%;
+        animation: circleAnimation 2s linear infinite;
+    }
+    .circle::before{
+        content: '';
+        position: absolute;
+        top: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background: #04fc43;
+        box-shadow: 0 0 20px #04fc43,0 0 60px #04fc43;
+    }
+        @keyframes circleAnimation {
+            0%{
+                transform: rotate(0deg);
+            }
+            100%{
+                transform: rotate(360deg);
+            }
+            
+        
+    }
+</style>
+<body style="background-color: black;">
+    <div class="motion">
+        <div class="circle"></div>
+    </div>
+</body>
+</html>
